@@ -1,5 +1,3 @@
 # Contact
 
-Email: your.email@example.com
-LinkedIn: [Your LinkedIn URL]
-GitHub: [Your GitHub URL]
+Email: jfischer.tech@gmail.com
