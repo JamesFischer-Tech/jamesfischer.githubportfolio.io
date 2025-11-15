@@ -1,3 +1,3 @@
-# Projects (WIP)
+# Projects (Work In Progress)
 
-[Describe your projects here]
+Wicked Rust; rust client coded in C#
