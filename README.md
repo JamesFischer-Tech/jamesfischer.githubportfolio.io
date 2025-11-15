@@ -1,6 +1,6 @@
 
 
-# James Fischer Portfolio
+# My Portfolio
 
 Professional portfolio showcasing my background, skills, and interests in the job market.
 
