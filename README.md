@@ -1,7 +1,4 @@
----
-layout: default
-title: Home
----
+
 
 # James Fischer Portfolio
 
