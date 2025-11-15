@@ -5,20 +5,3 @@ author: James Fischer
 
 # Theme
 theme: jekyll-theme-cayman
-
-# Navigation
-navigation:
-  - title: Home
-    url: /
-  - title: About
-    url: /about
-  - title: Projects
-    url: /projects
-  - title: Skills
-    url: /skills
-  - title: Experience
-    url: /experience
-  - title: Resume
-    url: /resume
-  - title: Contact
-    url: /contact
