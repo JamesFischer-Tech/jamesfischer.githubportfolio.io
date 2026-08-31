@@ -17,7 +17,7 @@ Then open `http://localhost:8000`.
 - `index.html` — single-page portfolio
 - `styles.css` — responsive visual system
 - `script.js` — mobile navigation and scroll reveals
-- `assets/james-fischer.jpg` — profile photo
-- `assets/James-Fischer-Resume.pdf` — current résumé
+- `james-fischer.jpg` — profile photo
+- `James-Fischer-Resume.pdf` — current résumé
 
 Legacy HTML pages redirect to the relevant sections so old links remain useful.

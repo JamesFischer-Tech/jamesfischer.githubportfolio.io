@@ -481,7 +481,7 @@ footer p { margin: 0; }
     padding: 18px;
     display: none;
     flex-direction: column;
-    align-items: stretch;
+    align-items: start;
     gap: 0;
     background: #101419;
     border: 1px solid var(--line);
@@ -525,4 +525,289 @@ footer p { margin: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+
+/* Venture cards and Discord server UI */
+.venture-grid {
+  grid-column: 2;
+  margin-top: 68px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+.venture-card {
+  min-height: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.venture-media {
+  position: relative;
+  height: 260px;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #05070a;
+  border-bottom: 1px solid var(--line);
+}
+.venture-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.015), transparent 45%, rgba(0,0,0,.16));
+}
+.media-stage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.jibbletes-media {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(108,255,91,.08), transparent 34%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.025), transparent 62%),
+    #050607;
+}
+.media-stage-logo img {
+  width: 150px;
+  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 18px 46px rgba(0,0,0,.55), 0 0 42px rgba(86,245,198,.045);
+}
+.wicked-media {
+  height: 360px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.055), transparent 44%),
+    linear-gradient(145deg, #0b0d10 0%, #060709 100%);
+}
+.wicked-media::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  background: url('wicked-castle-hand.png') center / cover no-repeat;
+  filter: blur(22px) brightness(.38);
+  opacity: .42;
+  transform: scale(1.06);
+}
+.media-stage-art img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 18px 48px rgba(0,0,0,.45);
+}
+.wicked-media .media-stage-art {
+  padding: 0;
+}
+.wicked-media .media-stage-art img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 12px;
+}
+.community-media {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(70,255,52,.085), transparent 52%),
+    #030503;
+}
+.media-stage-wordmark img {
+  width: 96%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  filter: saturate(1.08) contrast(1.04);
+}
+.venture-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+.venture-body p { margin: 0; }
+.venture-body > p:not(.project-kicker) {
+  color: var(--muted);
+  line-height: 1.72;
+}
+.venture-body h3 { margin: 0; }
+.venture-link,
+.community-stack-item,
+.server-button,
+.mini-action {
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.venture-link:hover,
+.community-stack-item:hover,
+.server-button:hover,
+.mini-action:hover {
+  transform: translateY(-2px);
+}
+.server-ui {
+  margin-top: 6px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #20232b;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+}
+.server-banner { height: 80px; }
+.jibbletes-banner {
+  background: linear-gradient(180deg, #3ddc2c 0%, #71ef56 45%, #86f271 100%);
+}
+.wicked-banner {
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.27), transparent 42%), linear-gradient(180deg, #555b62 0%, #363b42 100%);
+}
+.server-panel {
+  position: relative;
+  padding: 18px 20px 20px;
+  background: linear-gradient(180deg, #23262f 0%, #1f232b 100%);
+}
+.server-icon {
+  position: absolute;
+  left: 20px;
+  top: -36px;
+  width: 74px;
+  height: 74px;
+  border-radius: 22px;
+  border: 4px solid #1f232b;
+  background: #050608;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0,0,0,.34);
+}
+.server-glyph {
+  display: grid;
+  place-items: center;
+  color: #57f04f;
+  font-weight: 900;
+  font-size: 1.55rem;
+  letter-spacing: -.06em;
+  text-shadow: 0 0 12px rgba(87,240,79,.4);
+}
+.server-panel h4 {
+  margin: 16px 0 4px;
+  font-size: 1.02rem;
+  letter-spacing: -.02em;
+}
+.server-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: #cfd4da;
+  font-size: .9rem;
+}
+.server-est {
+  color: #aeb6bf;
+  font-size: .9rem;
+  margin-top: 2px !important;
+}
+.online,
+.members {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.stat-dot,
+.member-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.stat-dot { background: #2cd267; }
+.member-dot { background: #7f8490; }
+.server-mini-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.mini-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 11px;
+  border-radius: 9px;
+  font-size: .76rem;
+  font-weight: 800;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.mini-youtube { background: #ff2246; color: #fff; }
+.mini-discord { background: #5865f2; color: #fff; }
+.server-button {
+  display: block;
+  margin-top: 15px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #0c9443;
+  color: #f5fff7;
+  text-align: center;
+  font-weight: 850;
+}
+.server-button:hover { background: #0fb14f; }
+.community-card {
+  align-self: start;
+  height: auto;
+}
+.community-card .venture-body {
+  flex: 0 1 auto;
+}
+.community-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+.community-stack-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(23,28,34,.92), rgba(17,21,26,.92));
+}
+.community-stack-item strong { font-size: .92rem; }
+.community-stack-item span {
+  color: var(--muted);
+  font-size: .82rem;
+  text-align: right;
+}
+@media (max-width: 1000px) {
+  .venture-grid { grid-template-columns: 1fr 1fr; }
+  .community-card { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  .venture-grid { grid-template-columns: 1fr; }
+  .venture-media { height: 230px; padding: 18px; }
+  .wicked-media { height: min(88vw, 390px); padding: 14px; }
+  .media-stage-logo img { width: 138px; height: 138px; max-width: 138px; max-height: 138px; }
+  .media-stage-wordmark img { width: 98%; }
+  .community-stack-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .community-stack-item span { text-align: left; }
+  .server-panel h4 { margin-top: 22px; }
 }
